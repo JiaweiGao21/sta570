@@ -1,0 +1,36 @@
+```Python
+
+def cal(num):
+    string = ""
+    s = str(num)
+    if len(s)==1:
+        if s[0]=='0':
+            return string+"zero"
+        elif s[0]=='1':
+            return "one"
+        elif s[0]=='2':
+            return "two"
+        elif s[0]=='3':
+            return "three"
+    else:
+        if s[0]=='1': 
+            if s[1]=='0':
+                return "ten"
+            if s[1]=='1':
+                return "eleven"
+            elif s[1]=='2':
+                return "twelve"
+            else:
+                return "thirteen"
+        elif s[0]=='2':
+            string = "tweenty"
+            if s[1]=='0':
+                return string+""
+            if s[1]=='1':
+                return string+"-one"
+        elif s[0]=='3':
+            string = "thirty-"
+        else:
+            string = "fifty-"
+        
+```
