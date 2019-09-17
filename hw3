@@ -1,0 +1,3 @@
+> BootDist %>% summarise(mean = mean(xbar), stdDev=sd(xbar))
+      mean    stdDev
+1 74.40348 0.8984928
