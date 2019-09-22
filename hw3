@@ -1,3 +1,132 @@
-> BootDist %>% summarise(mean = mean(xbar), stdDev=sd(xbar))
-      mean    stdDev
-1 74.40348 0.8984928
+Jiawei Gao
+# Homework #3
+## 1.
+### a) 
+P (X $\gt$ 230) = 0.054
+``` R
+> 1-pnorm(230,222,5)
+[1] 0.05479929
+```
+
+    
+### b)
+E($\overline{x}$) 
+= $\mu$ = 222
+
+### c)
+Var($\overline{x}$) 
+= $\sigma_{\overline{x}}^2$ 
+= $\frac{1}{n}$  $\sigma^2$ 
+= $\frac{1}{6}$ $5^2$ 
+= 4.17
+
+### d)
+$\sigma_{\overline{x}}$ 
+= $\sqrt[2][ \sigma_{\overline{x}}^2]$
+=2.04
+
+### e)
+
+$$P(\overline{X} \gt 230)
+
+= P(\frac{\overline{X}-\mu_{\overline{x}}}{\sigma_{\overline{x}}} \gt \frac{230 - \mu_{\overline{x}}}{\sigma_{\overline{x}}})
+
+\approx P(Z \gt \frac{230 - 222}{2.04})
+
+=P(Z \gt 3.92)
+
+\approx 0
+$$
+
+## 2.
+### a)
+P (X $\lt$ 9) = 0.25
+``` R
+> pnorm(9,10,1.5)
+[1] 0.2524925
+```
+### b)
+E($\overline{x}$) 
+= $\mu$ = 10
+
+$\sigma_{\overline{x}}$
+= $\frac{\sigma}{\sqrt{n}}$
+= $\frac{1.5}{\sqrt{5}}$
+=0.67
+
+$$P(\overline{X} \lt 9)
+
+= P(\frac{\overline{X}-\mu_{\overline{x}}}{\sigma_{\overline{x}}} \lt \frac{9 - \mu_{\overline{x}}}{\sigma_{\overline{x}}})
+
+\approx P(Z \lt \frac{9 - 10}{0.67})
+
+=P(Z \lt -1.49)
+
+=P(z \gt 1.49)
+
+= 0.0681
+$$
+
+## 3.
+### a)
+P (X $\lt$ 296) = 0.252
+``` R
+> pnorm(296,298,3)
+[1] 0.2524925
+```
+
+### b)
+E($\overline{x}$) 
+= $\mu$ = 298
+
+$\sigma_{\overline{x}}$
+= $\frac{\sigma}{\sqrt{n}}$
+= $\frac{3}{\sqrt{6}}$
+=1.22
+
+$$P(\overline{X} \lt 296)
+
+= P(\frac{\overline{X}-\mu_{\overline{x}}}{\sigma_{\overline{x}}} \lt \frac{296 - \mu_{\overline{x}}}{\sigma_{\overline{x}}})
+
+\approx P(Z \lt \frac{296 - 298}{1.22})
+
+=P(Z \lt -1.639)
+
+=P(z \gt 1.639)
+
+= 0.0516
+$$
+
+``` R
+> pnorm(296,298,1.22)
+[1] 0.05057079
+```
+
+### c)
+
+$$P(297 \lt \overline{X} \lt 299) = 0.261
+$$
+
+``` R
+> pnorm(299, 298, 3) - pnorm(297, 298, 3)
+[1] 0.2611173
+```
+
+### d
+For n=10, $P(297 \lt \overline{X} \lt 299) = 0.708$
+
+For n=100, $P(297 \lt \overline{X} \lt 299) = 0.999$
+
+``` R
+> pnorm(299, 298, 3/sqrt(10)) - pnorm(297, 298, 3/sqrt(10))
+[1] 0.7081595
+> pnorm(299, 298, 3/sqrt(100)) - pnorm(297, 298, 3/sqrt(100))
+[1] 0.9991419
+```
+
+### e)
+Yes, this is an evidence that the filling machine is out of calibration. Because P($\overline{X})$ $\le$ 298) is almost zero.
+``` R
+> pnorm(298,300,3/sqrt(50))
+[1] 1.214234e-06
+```
